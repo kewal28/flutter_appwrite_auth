@@ -1,3 +1,4 @@
+import 'package:flutter_appwrite_auth/Screens/after_login.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_appwrite_auth/Screens/login.dart';
 import 'package:flutter_appwrite_auth/Services/user.dart';
@@ -63,55 +64,48 @@ class _SideMenuState extends State<SideMenu> {
             child: Column(
               children: [
                 _createDrawerItem(
-                  icon: Icons.contacts,
-                  text: 'Visiting Cards',
-                  onTap: () => {}
-                ),
+                    icon: Icons.contacts,
+                    text: 'After Login Screen',
+                    onTap: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AfterLogin(),
+                            ),
+                          )
+                        }),
                 _createDrawerItem(
                   icon: Icons.sync,
                   text: 'Google Sheet Sync',
                   onTap: () => {
                     Utils().showToast('Coming soon'),
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const GoogleSheets(),
-                    //   ),
-                    // )
                   },
                 ),
-                (userType != Config.userTypeUnlimited)
-                    ? _createDrawerItem(
-                        icon: Icons.calendar_month_outlined,
-                        text: 'Subscription',
-                        onTap: () => {
-                        },
-                      )
-                    : const SizedBox(),
+                _createDrawerItem(
+                  icon: Icons.calendar_month_outlined,
+                  text: 'Subscription',
+                  onTap: () => {},
+                ),
                 _createDrawerItem(
                   icon: Icons.mail,
                   text: 'Email Data',
-                  onTap: () {
-                  },
+                  onTap: () {},
                 ),
                 const Divider(),
                 _createDrawerItem(
                   icon: Icons.collections_bookmark,
                   text: 'How to use?',
-                  onTap: () {
-                  },
+                  onTap: () {},
                 ),
                 _createDrawerItem(
                   icon: Icons.contacts,
                   text: 'Contact Us',
-                  onTap: () {
-                  },
+                  onTap: () {},
                 ),
                 _createDrawerItem(
                   icon: Icons.policy,
                   text: 'Terms & Conditions',
-                  onTap: () {
-                  },
+                  onTap: () {},
                 ),
                 // _createDrawerItem(icon: Icons.face, text: 'Authors'),
                 // _createDrawerItem(
