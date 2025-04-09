@@ -55,10 +55,6 @@ class _LandingState extends State<Landing> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                'assets/app-logo.png',
-                width: 200,
-              ),
               const SizedBox(height: 20),
               const CircularProgressIndicator(
               ),
